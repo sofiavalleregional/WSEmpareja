@@ -332,6 +332,8 @@ public class Partida extends AppCompatActivity {
         }
         else viewChronometer.start();
 
+
+        actualizaPantalla();
         cargarCartas();
     }
 
@@ -392,6 +394,7 @@ public class Partida extends AppCompatActivity {
             public void onCancel(DialogInterface dialog) {
                 Intent intent=new Intent(getApplicationContext(),Partida.class);
                 intent.putExtra(Home.DIFICULTAD,dificultad);
+                finish();
                 startActivity(intent);
             }
         });
@@ -407,6 +410,7 @@ public class Partida extends AppCompatActivity {
             case R.id.final_bton_home:
                 intent=new Intent(this,Home.class);
                 startActivity(intent);
+                finish();
                 break;
             case R.id.final_bton_share:
                 break;
@@ -414,13 +418,19 @@ public class Partida extends AppCompatActivity {
                  intent=new Intent(getApplicationContext(),Partida.class);
                 intent.putExtra(Home.DIFICULTAD,dificultad);
                 startActivity(intent);
+                finish();
                 break;
         }
+    }
+
+    public void abreDialogCompartir(){
+
     }
 
     public void onBackPressed(){
         Intent intent=new Intent(this, Home.class);
         startActivity(intent);
+        finish();
     }
 
 

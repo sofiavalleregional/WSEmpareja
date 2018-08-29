@@ -26,4 +26,6 @@
     <dimen name="tam_total_circulo_fondo_comparar">30dp</dimen>
     <dimen name="tam_circulo_fondo_comparar">28dp</dimen>
 
+    <dimen name="tam_total_bton_compartir">100dp</dimen>
+    <dimen name="tam_bton_compartir">95dp</dimen>
 </resources>
