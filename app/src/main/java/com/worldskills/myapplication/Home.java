@@ -125,6 +125,10 @@ digiten se cierra el dialogo y se muestra el menu*/
             }
         });
 
+        LinearLayout layout=names.findViewById(R.id.layout_dialog_names);
+        Animation animation=AnimationUtils.loadAnimation(this,R.anim.aparecer);
+        layout.startAnimation(animation);
+
         names.show();
         player1.setText(nick1);
 
