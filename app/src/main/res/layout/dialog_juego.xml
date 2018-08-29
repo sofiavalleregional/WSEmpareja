@@ -8,26 +8,32 @@
     android:layout_height="match_parent">
 
 
-
     <Button
-    android:text="Fácil"
-    android:id="@+id/easy"
+        android:id="@+id/easy"
+        android:layout_width="135dp"
+        android:layout_height="100dp"
         android:layout_marginTop="15dp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+        android:background="@drawable/anim_escoger"
+        android:text="Fácil"
+        android:textColor="@android:color/white" />
 
     <Button
-        android:text="Medio"
+
         android:id="@+id/medio"
+        android:layout_width="129dp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/anim_escoger"
+        android:layout_height="100dp"
         android:layout_marginTop="15dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:text="Medio" />
 
     <Button
-        android:text="Hard"
         android:id="@+id/hard"
+        android:textColor="@android:color/white"
+        android:layout_width="132dp"
+        android:background="@drawable/anim_escoger"
+        android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:text="Difícil" />
 
 </LinearLayout>

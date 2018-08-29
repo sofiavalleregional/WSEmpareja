@@ -4,6 +4,7 @@
     android:layout_gravity="center"
     android:layout_width="250dp"
     android:gravity="center_horizontal"
+    android:id="@+id/dialogsett"
     android:background="@color/negro_claro"
     android:orientation="vertical"
     android:layout_height="300dp">
@@ -31,6 +32,7 @@
 
 
     <EditText
+        android:inputType="number"
         android:id="@+id/text_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,6 +48,7 @@
         android:layout_height="wrap_content">
 
         <RadioButton
+            android:onClick="onChecked"
             android:id="@+id/ractivado"
             android:textColor="@android:color/white"
             android:text="Activado"
@@ -54,6 +57,7 @@
             android:layout_height="wrap_content" />
 
         <RadioButton
+            android:onClick="onChecked"
             android:id="@+id/rdesactivado"
             android:buttonTint="@color/colorPrimaryDark"
             android:textColor="@android:color/white"
@@ -65,6 +69,8 @@
     </RadioGroup>
 
     <Button
+        android:background="@drawable/anim_escoger"
+        android:textColor="@android:color/white"
         android:id="@+id/confirmar_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:layout_width="300dp"
     android:layout_gravity="center"
+    android:id="@+id/dialogscores"
     android:gravity="center_horizontal"
     android:background="@color/negro_claro"
     android:layout_height="400dp">
@@ -16,6 +17,7 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/cancel"
             android:background="@drawable/icono_arrow"
             android:layout_width="40dp"
             android:layout_gravity="center_horizontal"
@@ -41,12 +43,17 @@
         android:orientation="horizontal">
 
         <Button
+            android:background="@drawable/boton_selec"
+            android:textColor="@android:color/white"
             android:id="@+id/scoreseasy"
             android:text="Fácil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <Button
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/boton_selec"
+            android:textColor="@android:color/white"
             android:id="@+id/scoresmedio"
             android:text="Medio"
             android:layout_width="wrap_content"
@@ -54,6 +61,9 @@
 
 
         <Button
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/boton_selec"
+            android:textColor="@android:color/white"
             android:id="@+id/scoreshard"
             android:text="Dificil"
             android:layout_width="wrap_content"
@@ -70,58 +80,55 @@
         <ImageView
             android:id="@+id/medalla"
             android:layout_width="80dp"
+            android:src="@drawable/medalla"
             android:layout_height="80dp" />
 
         <TextView
-            android:id="@+id/t1"
-            android:text="JUADOR 0"
-            android:textColor="@android:color/white"
-            android:fontFamily="@font/cambriai"
-            android:textSize="25dp"
+            android:text="JUGADOR 1"
+            android:id="@+id/text1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@android:color/white"/>
 
     </LinearLayout>
 
     <TextView
-        android:drawableStart="@drawable/icono_circle"
-        android:id="@+id/t2"
-        android:layout_width="107dp"
+        android:id="@+id/texto2"
+        android:layout_width="147dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/contenedor"
-        android:fontFamily="@font/cambriai"
-        android:text="JUADOR 0"
+        android:drawableStart="@drawable/icono_circle"
+        android:text="JUGADOR 0"
         android:textColor="@android:color/white"
         android:textSize="20dp" />
 
 
-
     <TextView
+        android:id="@+id/texto3"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:background="@drawable/contenedor"
         android:drawableStart="@drawable/icono_circle"
-        android:text="JUADOR 0"
-        android:id="@+id/t3"
-        android:layout_marginTop="10dp"
-        android:textColor="@android:color/white"
-        android:fontFamily="@font/cambriai"
-        android:textSize="20dp"
-        android:layout_width="107dp"
-        android:layout_height="wrap_content" />
 
+        android:text="JUGADOR 0"
+        android:textColor="@android:color/white"
+        android:textSize="20dp" />
 
 
     <TextView
+        android:id="@+id/texto4"
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:background="@drawable/contenedor"
         android:drawableStart="@drawable/icono_circle"
-        android:text="JUADOR 0"
-        android:layout_marginTop="10dp"
-        android:id="@+id/t4"
+
+        android:text="JUGADOR 0"
         android:textColor="@android:color/white"
-        android:fontFamily="@font/cambriai"
-        android:textSize="20dp"
-        android:layout_width="107dp"
-        android:layout_height="wrap_content" />
+        android:textSize="20dp" />
 
 
 

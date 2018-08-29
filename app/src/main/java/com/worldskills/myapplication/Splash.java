@@ -15,13 +15,14 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-/////////////// Se buscan los componentes en xml para animar, se instancia la animación y se ordena que deje la figura en la posic
+/////////////// Se buscan los componentes en xml para animar, se instancia la animación y se ordena que deje la figura en la posición final
         ImageView imageView= findViewById(R.id.image);
         Animation animation= AnimationUtils.loadAnimation(this, R.anim.alpha);
         imageView.setAnimation(animation);
 
         animation.setFillAfter(true);
-
+///////////////// Se crea un hilo para que termine el tiempo e inicie la partida, se envia un booleano para home y saber asi que es primera vez
+        //// y asi digitalizar los nombres
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
