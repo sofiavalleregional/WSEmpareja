@@ -68,7 +68,7 @@ public class Partida extends AppCompatActivity {
         if (datos!=null){
             dificultad=datos.getInt(Home.DIFICULTAD);
         }
-        dificultad=8;//borrarLuego
+
 
         puntaje1=0;
         puntaje2=0;
