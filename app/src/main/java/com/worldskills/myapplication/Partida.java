@@ -434,18 +434,20 @@ public class Partida extends AppCompatActivity {
         TextView facebook, twitter;
 
 
+        final RedObject red = new RedObject(this);
         facebook=dialogCompartir.findViewById(R.id.share_bton_facebook);
         twitter=dialogCompartir.findViewById(R.id.share_bton_twitter);
 
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                red.shareFacebook(puntaje1, puntaje2, nomJ1, nomJ2);
             }
         });
         twitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity( red.shareTwitter(puntaje1, puntaje2, nomJ1, nomJ2));
 
             }
         });
