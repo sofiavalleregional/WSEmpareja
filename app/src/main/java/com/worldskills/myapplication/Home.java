@@ -4,6 +4,8 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -25,16 +27,17 @@ public class Home extends AppCompatActivity {
     public static final String MODO = "MODO";
     public static final String PLAYER1 = "PLAYER1";
     public static final String PLAYER2= "PLAYER2";
-    Animation aparecer, puntos;
-    TextView player1, player2, t1,t2,t3,t4;
-    Dialog settings, scores, game, names;
+
+    private Animation aparecer, puntos;
+    private TextView player1, player2, t1,t2,t3,t4;
+    private Dialog settings, scores, game, names;
     private String nick1, nick2, puntajes[];
     private int player;
     private boolean modo, ingreso;
-    RadioButton activado, desactivado;
+    private RadioButton activado, desactivado;
     private long tiempo;
-    ImageView medalla;
-    LinearLayout dialogsetti, dialogscores;
+    private ImageView medalla;
+    private LinearLayout dialogsetti, dialogscores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,18 +68,22 @@ public class Home extends AppCompatActivity {
         settings= new Dialog(this);
         settings.setContentView(R.layout.dialog_settings);
         settings.setCanceledOnTouchOutside(false);
+        settings.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         scores= new Dialog(this);
         scores.setContentView(R.layout.dialog_scores);
         scores.setCanceledOnTouchOutside(false);
+        settings.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         names= new Dialog(this);
         names.setContentView(R.layout.dialog_names);
         names.setCanceledOnTouchOutside(false);
+        names.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         game= new Dialog(this, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
         game.setContentView(R.layout.dialog_juego);
         game.setCanceledOnTouchOutside(false);
+        game.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         player1= findViewById(R.id.user1);
         player2= findViewById(R.id.user2);
@@ -126,8 +133,7 @@ digiten se cierra el dialogo y se muestra el menu*/
         });
 
         LinearLayout layout=names.findViewById(R.id.layout_dialog_names);
-        Animation animation=AnimationUtils.loadAnimation(this,R.anim.aparecer);
-        layout.startAnimation(animation);
+        layout.startAnimation(aparecer);
 
         names.show();
         player1.setText(nick1);
@@ -197,6 +203,8 @@ digiten se cierra el dialogo y se muestra el menu*/
             }
         });
 
+        LinearLayout layout=settings.findViewById(R.id.dialogsett);
+        layout.startAnimation(aparecer);
         settings.show();
     }
 
@@ -284,6 +292,9 @@ digiten se cierra el dialogo y se muestra el menu*/
             }
         });
 
+
+        LinearLayout layout=scores.findViewById(R.id.dialogscores);
+        layout.startAnimation(aparecer);
         scores.show();
     }
 
