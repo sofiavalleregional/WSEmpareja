@@ -423,6 +423,7 @@ public class Partida extends AppCompatActivity {
         }
     }
 
+    /*Metodo para abrir el las opciones para compartir en las redes sociales*/
     public void abreDialogCompartir(){
         Dialog dialogCompartir=new Dialog(this,android.R.style.Theme_Black_NoTitleBar_Fullscreen);
         dialogCompartir.setContentView(R.layout.dialog_compartir);
@@ -456,6 +457,12 @@ public class Partida extends AppCompatActivity {
     }
 
     public void onBackPressed(){
+        try{
+            timerPartida.cancel();
+        }catch (Exception e){}
+        try {
+            timerCarta.cancel();
+        }catch (Exception e){}
         Intent intent=new Intent(this, Home.class);
         startActivity(intent);
         finish();
