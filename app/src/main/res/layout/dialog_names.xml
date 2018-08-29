@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_width="300dp"
+    android:layout_gravity="center"
+    android:background="@color/negro_claro"
+    android:layout_height="270dp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/cambriab"
+        android:text="Ingresar nombres" />
+
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:src="@drawable/icono_user" />
+
+
+    <EditText
+        android:id="@+id/textnames"
+        android:layout_width="163dp"
+        android:text="Jugador 1"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/cambriai"
+        android:backgroundTint="@android:color/white"
+        android:layout_marginTop="15dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/confirmar_nombres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/cambriab"
+        android:text="Confirmar" />
+
+
+
+</LinearLayout>

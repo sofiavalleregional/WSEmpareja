@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item>
+
+        <shape>
+
+            <solid android:color="@color/colorPrimary"/>
+
+
+        </shape>
+
+    </item>
+
+
+    <item android:drawable="@drawable/icono_settings"
+        android:width="40dp"
+        android:height="40dp"
+        android:gravity="center"/>
+
+</layer-list>
