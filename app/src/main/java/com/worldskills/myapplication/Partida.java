@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import com.worldskills.myapplication.Modulos.AdapterCartas;
 import com.worldskills.myapplication.Modulos.ItemCarta;
+import com.worldskills.myapplication.Redes.RedObject;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -431,6 +432,7 @@ public class Partida extends AppCompatActivity {
         dialogCompartir.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         TextView facebook, twitter;
+
 
         facebook=dialogCompartir.findViewById(R.id.share_bton_facebook);
         twitter=dialogCompartir.findViewById(R.id.share_bton_twitter);

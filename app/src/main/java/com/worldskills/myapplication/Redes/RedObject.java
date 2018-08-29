@@ -12,11 +12,13 @@ import com.facebook.share.widget.ShareDialog;
 public class RedObject {
 
     Context context;
-
+// SE NECESITA ENVIAR UN CONTEXTO PARA QUE LAS SDKS INICIEN, PARA ELLO SE CREO UN CONSTRUCTOR Y SE USO LAS POO.
     public RedObject(Context context) {
         this.context = context;
     }
 
+
+    // METODO PUBLICO QUE DEVOLVERA LA ACCIÓN DE COMPARTIR EN FACEBOOK
     public void shareFacebook (int puntaje){
         FacebookSdk.sdkInitialize(context);
 
@@ -30,7 +32,8 @@ public class RedObject {
             dialog.show(link);
         }
     }
-
+    // METODO PUBLICO QUE DEVOLVERA UN INTENT DE COMPARTIR EN TWITTER. OBSERVACION: SE ESPERO HASTA EL FINAL DE LA PRUEBA PARA LA APROBACIÓN DE TWITTER
+    // DE LA CUENTA Y SIN EMABRGO NUNCA LLEGO, POR ELLO SE REALIZO CON UN INTENT. SE ADJUNTA SS DE LA PANTALLA DE TWITTER.
     public Intent shareTwitter (int puntaje){
         Intent intent= new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");

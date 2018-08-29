@@ -30,15 +30,18 @@
 
     <EditText
         android:id="@+id/textnames"
-        android:layout_width="163dp"
-        android:text="Jugador 1"
-        android:textColor="@android:color/white"
-        android:fontFamily="@font/cambriai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="25dp"
         android:backgroundTint="@android:color/white"
-        android:layout_marginTop="15dp"
-        android:layout_height="wrap_content" />
+        android:fontFamily="@font/cambriai"
+        android:text="Jugador 1"
+        android:textColor="@android:color/white" />
 
     <Button
+        android:background="@drawable/anim_escoger"
+        android:textColor="@android:color/white"
         android:id="@+id/confirmar_nombres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

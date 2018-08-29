@@ -11,9 +11,9 @@
     <Button
         android:id="@+id/easy"
         android:layout_width="135dp"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/anim_escoger"
+        android:background="@drawable/anim_bton_transparente"
         android:text="Fácil"
         android:textColor="@android:color/white" />
 
@@ -22,18 +22,18 @@
         android:id="@+id/medio"
         android:layout_width="129dp"
         android:textColor="@android:color/white"
-        android:background="@drawable/anim_escoger"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:layout_marginTop="15dp"
+        android:background="@drawable/anim_bton_transparente"
         android:text="Medio" />
 
     <Button
         android:id="@+id/hard"
         android:textColor="@android:color/white"
         android:layout_width="132dp"
-        android:background="@drawable/anim_escoger"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginTop="15dp"
+        android:background="@drawable/anim_bton_transparente"
         android:text="Difícil" />
 
 </LinearLayout>

@@ -7,7 +7,7 @@
     android:id="@+id/dialogscores"
     android:gravity="center_horizontal"
     android:background="@color/negro_claro"
-    android:layout_height="400dp">
+    android:layout_height="440dp">
 
 
     <LinearLayout
@@ -33,6 +33,12 @@
             android:layout_height="60dp" />
 
     </LinearLayout>
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:layout_width="60dp"
+        android:src="@drawable/icono_smile"
+        android:layout_height="60dp" />
 
 
     <LinearLayout
@@ -71,8 +77,9 @@
 
     </LinearLayout>
 
+
     <LinearLayout
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">

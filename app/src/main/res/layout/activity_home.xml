@@ -68,6 +68,8 @@
             android:onClick="partida"
             android:text="Jugar"
             android:textSize="30dp"
+            android:fontFamily="@font/cambriab"
+            android:paddingLeft="20dp"
             android:textColor="@android:color/white"
             android:textAlignment="textStart"
             android:layout_width="match_parent"
@@ -85,9 +87,11 @@
         android:layout_height="170dp">
 
         <Button
+            android:fontFamily="@font/cambriab"
             android:onClick="scoresShow"
             android:textColor="@android:color/white"
             android:textSize="25dp"
+            android:paddingLeft="20dp"
             android:textAlignment="textStart"
             android:text="Puntajes"
             android:layout_width="match_parent"

@@ -29,8 +29,9 @@ public class Splash extends AppCompatActivity {
                 Intent intent= new Intent(Splash.this, Home.class);
                 intent.putExtra("ingreso", true);
                 startActivity(intent);
+                finish();
             }
-        }, 3000);
+        }, 2000);
 
 
     }

@@ -2,7 +2,10 @@ package com.worldskills.myapplication;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +13,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -29,6 +33,7 @@ public class Home extends AppCompatActivity {
     private boolean modo, ingreso;
     RadioButton activado, desactivado;
     private long tiempo;
+    ImageView medalla;
     LinearLayout dialogsetti, dialogscores;
 
     @Override
@@ -76,7 +81,7 @@ public class Home extends AppCompatActivity {
         player1= findViewById(R.id.user1);
         player2= findViewById(R.id.user2);
 
-
+        medalla= scores.findViewById(R.id.medalla);
 
         activado= settings.findViewById(R.id.ractivado);
         desactivado= settings.findViewById(R.id.rdesactivado);
@@ -86,6 +91,7 @@ public class Home extends AppCompatActivity {
 
         puntos= AnimationUtils.loadAnimation(this, R.anim.puntajes);
         aparecer= AnimationUtils.loadAnimation(this, R.anim.aparecer);
+
 
         puntos.setFillAfter(true);
         aparecer.setFillAfter(true);
@@ -218,8 +224,6 @@ digiten se cierra el dialogo y se muestra el menu*/
         dificil= scores.findViewById(R.id.scoreshard);
 
 
-
-
          puntajes= new String[4];
          defaultScores();
          consultaDatos(8);
@@ -281,13 +285,18 @@ digiten se cierra el dialogo y se muestra el menu*/
 
 
 
-
+// este sirve para llenar los puntajes en caso de que aun no se haya registrado ninguno en aquella posición
     public void defaultScores(){
         for (int i=0; i<puntajes.length; i++){
-            puntajes[i]= ".  Jugador 0 ";
+            if(i==0){
+                puntajes[0]= (i+1) +".  Jugador \n 0 ";
+            }else {
+            puntajes[i]=(i+1)+ ".  Jugador 0 ";}
         }
     }
 
+
+    // Una consulta a la base de datos donde me devuelve un cursor con la información
     public void  consultaDatos(int dificultad){
         DataBase db = new DataBase(this);
 
@@ -312,8 +321,8 @@ digiten se cierra el dialogo y se muestra el menu*/
     }
 
 
+    //organiza los puntajes en cada texview con su respectiva animación
     public void organizar(){
-        Toast.makeText(Home.this, "ENTRO", Toast.LENGTH_SHORT).show();
         t1.setText(puntajes[0]);
         t2.setText(puntajes[1]);
         t3.setText(puntajes[2]);
@@ -324,8 +333,46 @@ digiten se cierra el dialogo y se muestra el menu*/
         t3.startAnimation(puntos);
         t4.startAnimation(puntos);
 
+        medalla.startAnimation(puntos);
+
     }
 
 
+    //// vuelve y carga los datos luiego de haberse pausado la actividad
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        nick1= sharedPreferences.getString(PLAYER1, "player1");
+        nick2= sharedPreferences.getString(PLAYER2, "player 2");
+        modo= sharedPreferences.getBoolean(MODO, false);
+        tiempo= sharedPreferences.getLong(TIEMPO, 0);
+
+        if(modo){
+            activado.setChecked(true);
+        } else desactivado.setChecked(true);
+
+         player1.setText(nick1);
+         player2.setText(nick2);
+    }
+
+
+    // Guarda los datos en cuanto la actividad se pausa la actividad
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+
+        editor.putBoolean(MODO, modo);
+        editor.putString(PLAYER1, nick1);
+        editor.putString(PLAYER2, nick2);
+        editor.putLong(TIEMPO, tiempo);
+
+        editor.apply();
+
+    }
 }
