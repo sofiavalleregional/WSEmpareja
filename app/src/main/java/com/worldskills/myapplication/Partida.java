@@ -306,8 +306,8 @@ public class Partida extends AppCompatActivity {
     public void guardaDatos(){
         if (!temporizadorActivado){
             DataBase db=new DataBase(this);
-            db.save(nomJ1,puntaje1);
-            db.save(nomJ2,puntaje2);
+            db.save(nomJ1,puntaje1,dificultad);
+            db.save(nomJ2,puntaje2,dificultad);
         }
     }
 

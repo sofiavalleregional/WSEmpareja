@@ -10,7 +10,7 @@ public class DataBase extends SQLiteOpenHelper {
 
     private static final String NOMBRE="registros.db";
     private static final int VERSION=1;
-    private static final String TABLA_JUEGO="CREATE TABLE PARTIDA(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE TEXT, PUNTAJE TEXT)";
+    private static final String TABLA_JUEGO="CREATE TABLE PARTIDA(ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE TEXT, PUNTAJE TEXT, DIFICULTAD INTEGER)";
 
     DataBase (Context context){
         super(context,NOMBRE,null,VERSION);
@@ -26,27 +26,31 @@ public class DataBase extends SQLiteOpenHelper {
         db.execSQL(TABLA_JUEGO);
     }
     /*Metodo para guardar los campor que este reciba*/
-    public void save(String nombre, int puntaje){
+    public void save(String nombre, int puntaje, int dificultad){
         SQLiteDatabase db=getWritableDatabase();
         ContentValues valores=new ContentValues();
 
         valores.put("NOMBRE",nombre);
         valores.put("PUNTAJE",puntaje);
+        valores.put("DIFICULTAD",dificultad);
 
         db.insert("PARTIDA",null,valores);
     }
 
     /*Metodo que devuelve un cursor con 4 posiciones para los puntaje*/
-    public Cursor load(){
+    public Cursor load(int dificultad){
         SQLiteDatabase db=getReadableDatabase();
         Cursor cursor=null;
 
         try{
+
             String[] colunms={"NOMBRE","PUNTAJE"};
+            String selection="DIFICULTAD" + " = ? ";
+            String[] selectionArgs={dificultad+""};
             String limit="4";
             String orderBy="PUNTAJE DESC";
 
-            cursor=db.query("PARTIDA",colunms,null,null,null,orderBy,limit);
+            cursor=db.query("PARTIDA",colunms,selection,selectionArgs,null,orderBy,limit);
 
         }catch (Exception e){}
 

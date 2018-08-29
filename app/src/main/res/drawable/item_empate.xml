@@ -2,8 +2,8 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:width="@dimen/ancho_item_ganador"
-        android:height="@dimen/alto_total_item_ganador"
+        android:width="@dimen/ancho_item_empate"
+        android:height="@dimen/alto_total_item_empate"
         >
         <shape>
             <solid android:color="@color/colorPrimaryDark"/>
@@ -14,8 +14,8 @@
     </item>
 
     <item
-        android:width="@dimen/ancho_item_ganador"
-        android:height="@dimen/alto_item_ganador"
+        android:width="@dimen/ancho_item_empate"
+        android:height="@dimen/alto_item_empate"
         >
         <shape>
             <solid android:color="@color/colorPrimary"/>
@@ -26,8 +26,8 @@
     </item>
 
     <item
-        android:width="@dimen/alto_item_ganador"
-        android:height="@dimen/alto_item_ganador"
+        android:width="@dimen/alto_item_empate"
+        android:height="@dimen/alto_item_empate"
         >
         <shape>
             <solid android:color="@color/negro_claro"/>

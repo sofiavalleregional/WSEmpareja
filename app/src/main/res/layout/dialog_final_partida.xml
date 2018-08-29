@@ -4,13 +4,47 @@
     android:layout_width="300dp"
     android:background="@color/negro"
     android:layout_height="wrap_content"
+    android:gravity="center"
     android:layout_gravity="center">
 
     <ImageView
         android:layout_width="250dp"
         android:layout_height="140dp"
         android:background="@drawable/logo"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_ganador"
+        android:layout_marginBottom="2dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_ganador"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fondo_compara_puntajes"
+        android:text="VS"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/cambriai"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_perdedor"
+        android:layout_marginBottom="2dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_perdedor"/>
 
 
 

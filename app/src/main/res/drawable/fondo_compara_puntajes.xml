@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="@dimen/tam_total_circulo_fondo_comparar"
+        android:height="@dimen/tam_total_circulo_fondo_comparar"
+        >
+        <shape
+            android:shape="oval"
+            >
+            <solid android:color="@color/colorPrimaryDark"/>
+
+
+        </shape>
+
+
+    </item>
+    <item
+        android:width="@dimen/tam_circulo_fondo_comparar"
+        android:height="@dimen/tam_circulo_fondo_comparar"
+        android:gravity="center_horizontal"
+        >
+        <shape
+            android:shape="oval"
+            >
+            <solid android:color="@color/colorPrimary"/>
+
+
+        </shape>
+
+
+    </item>
+
+
+
+</layer-list>

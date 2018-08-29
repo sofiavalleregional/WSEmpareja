@@ -23,4 +23,7 @@
 
    <dimen name="radio_item_puntaje_final">50dp</dimen>
 
+    <dimen name="tam_total_circulo_fondo_comparar">30dp</dimen>
+    <dimen name="tam_circulo_fondo_comparar">28dp</dimen>
+
 </resources>
