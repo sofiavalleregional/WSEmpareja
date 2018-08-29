@@ -8,4 +8,14 @@
     <dimen name="tam_circulo_carta">40dp</dimen>
     <dimen name="radio_item_carta">12dp</dimen>
 
+
+    <dimen name="ancho_item_ganador">200dp</dimen>
+    <dimen name="alto_item_ganador">50dp</dimen>
+
+    <dimen name="ancho_item_perdedor">130dp</dimen>
+    <dimen name="alto_item_perdedor">40dp</dimen>
+
+    <dimen name="ancho_item_empate">100dp</dimen>
+    <dimen name="alto_item_empate">45</dimen>
+
 </resources>
