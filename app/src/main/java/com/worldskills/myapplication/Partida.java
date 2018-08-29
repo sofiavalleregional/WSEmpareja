@@ -1,6 +1,11 @@
 package com.worldskills.myapplication;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.os.SystemClock;
@@ -14,6 +19,7 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.Chronometer;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -297,10 +303,7 @@ public class Partida extends AppCompatActivity {
     }
 
 
-    /*Metodo para abrir el dialog final que mustra el resultado del juego*/
-    public void abreDialogFinal(){
 
-    }
 
     /*Metodo para guardar el puntaje y el nombre de cada jugador en la base de datos*/
     public void guardaDatos(){
@@ -327,6 +330,85 @@ public class Partida extends AppCompatActivity {
         else viewChronometer.start();
 
         cargarCartas();
+    }
+
+
+    /*Metodo para abrir el dialog final que mustra el resultado del juego*/
+    public void abreDialogFinal(){
+        Dialog dialogFin=new Dialog(this);
+        dialogFin.setContentView(R.layout.dialog_final_partida);
+        dialogFin.setCanceledOnTouchOutside(false);
+        dialogFin.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        TextView ganador, perdedor, punt1, punt2, tiempoT, empateIcon, empateText;
+        ganador=dialogFin.findViewById(R.id.final_ganador);
+        perdedor=dialogFin.findViewById(R.id.final_perdedor);
+        punt1=dialogFin.findViewById(R.id.final_puntaje_ganador);
+        punt2=dialogFin.findViewById(R.id.final_puntaje_perdedor);
+        tiempoT=dialogFin.findViewById(R.id.final_tiempo);
+        empateIcon=dialogFin.findViewById(R.id.final_item_empate);
+        empateText=dialogFin.findViewById(R.id.final_text_empate);
+
+        if (puntaje1>puntaje2){
+            ganador.setText(nomJ1);
+            perdedor.setText(nomJ2);
+            punt1.setText(puntaje1+"");
+            punt2.setText(puntaje2+"");
+
+        }else if (puntaje2>puntaje1){
+            ganador.setText(nomJ2);
+            perdedor.setText(nomJ1);
+            punt1.setText(puntaje2+"");
+            punt2.setText(puntaje1+"");
+        }else{
+            empateIcon.setBackgroundResource(R.drawable.icon_empate);
+            empateText.setText("EMPATE");
+            ganador.setText(nomJ1);
+            perdedor.setText(nomJ2);
+            punt1.setText(puntaje1+"");
+            punt2.setText(puntaje2+"");
+
+            punt1.setBackgroundResource(R.drawable.item_empate);
+            punt2.setBackgroundResource(R.drawable.item_empate);
+
+        }
+        tiempoT.setText(tiempoPartida+"");
+
+
+        LinearLayout layout=dialogFin.findViewById(R.id.layout_dialog_final);
+        Animation aparecer=AnimationUtils.loadAnimation(this,R.anim.aparecer);
+        layout.startAnimation(aparecer);
+        dialogFin.show();
+
+        dialogFin.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                Intent intent=new Intent(getApplicationContext(),Partida.class);
+                intent.putExtra(Home.DIFICULTAD,dificultad);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+    /*Este metodo es para obtener el boton presionado en el dialogo final para asi realizar la accion correspondiente
+    * */
+    public void botonesDialogFinal(View v){
+
+        Intent intent;
+        switch (v.getId()){
+            case R.id.final_bton_home:
+                intent=new Intent(this,Home.class);
+                startActivity(intent);
+                break;
+            case R.id.final_bton_share:
+                break;
+            case R.id.final_bton_replay:
+                 intent=new Intent(getApplicationContext(),Partida.class);
+                intent.putExtra(Home.DIFICULTAD,dificultad);
+                startActivity(intent);
+                break;
+        }
     }
 
 

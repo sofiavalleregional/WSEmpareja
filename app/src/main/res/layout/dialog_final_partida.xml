@@ -5,6 +5,7 @@
     android:background="@color/negro"
     android:layout_height="wrap_content"
     android:gravity="center"
+    android:id="@+id/layout_dialog_final"
     android:layout_gravity="center">
 
     <ImageView
@@ -14,37 +15,134 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="12dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/item_ganador"
-        android:layout_marginBottom="2dp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/item_ganador"/>
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/final_ganador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jugador1"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+
+            android:fontFamily="@font/cambriaz"
+            android:textSize="23sp"/>
+        <TextView
+            android:id="@+id/final_puntaje_ganador"
+            style="@style/item_ganador"
+            />
+
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/fondo_compara_puntajes"
+
+
         android:text="VS"
+        android:layout_margin="7dp"
         android:gravity="center"
         android:textColor="@android:color/white"
         android:fontFamily="@font/cambriai"
         android:textStyle="bold"/>
 
-    <TextView
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/item_perdedor"
-        android:layout_marginBottom="2dp"
+        android:orientation="vertical"
+        android:gravity="center"
+
+        >
+        <TextView
+            android:id="@+id/final_perdedor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jugador2"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:fontFamily="@font/cambriaz"
+            android:textSize="13sp"/>
+
+
+
+        <TextView
+            android:id="@+id/final_puntaje_perdedor"
+            style="@style/item_perdedor"
+            />
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/final_tiempo"
+        android:layout_marginTop="30dp"
+        style="@style/item_empate"
+        android:drawableStart="@drawable/icono_time"
+        />
+
+    <TextView
+        android:id="@+id/final_item_empate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         />
     <TextView
+        android:id="@+id/final_text_empate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/item_perdedor"/>
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:weightSum="12"
+        >
+
+        <ImageButton
+            android:onClick="botonesDialogFinal"
+            android:id="@+id/final_bton_home"
+            android:layout_weight="4.5"
+            android:layout_height="40dp"
+            android:layout_width="0dp"
+            android:background="@drawable/anim_bton_transparente"
+            android:src="@drawable/icono_home"
+
+
+            />
+        <ImageButton
+            android:id="@+id/final_bton_share"
+            android:onClick="botonesDialogFinal"
+            android:layout_weight="2"
+            android:layout_height="40dp"
+            android:layout_width="0dp"
+            android:background="@drawable/anim_bton_transparente"
+            android:src="@drawable/icono_share"
+            />
+
+        <ImageButton
+            android:id="@+id/final_bton_replay"
+            android:onClick="botonesDialogFinal"
+            android:layout_weight="4.5"
+            android:layout_height="40dp"
+            android:layout_width="0dp"
+            android:background="@drawable/anim_bton_transparente"
+            android:src="@drawable/icon_replay"
+            />
+    </LinearLayout>
 
 
 
