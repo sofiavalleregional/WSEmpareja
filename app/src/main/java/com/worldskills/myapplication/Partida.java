@@ -1,7 +1,10 @@
 package com.worldskills.myapplication;
 
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
+import android.os.SystemClock;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,12 +15,14 @@ import android.widget.AdapterView;
 import android.widget.Chronometer;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.worldskills.myapplication.Modulos.AdapterCartas;
 import com.worldskills.myapplication.Modulos.ItemCarta;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.ExecutionException;
 
 public class Partida extends AppCompatActivity {
 
@@ -54,7 +59,7 @@ public class Partida extends AppCompatActivity {
 
         Bundle datos=getIntent().getExtras();
         if (datos!=null){
-            dificultad=datos.getInt("");
+            dificultad=datos.getInt(Home.DIFICULTAD);
         }
         dificultad=8;//borrarLuego
 
@@ -108,6 +113,7 @@ public class Partida extends AppCompatActivity {
 
     /*Metodo con el fin de organizar las figuras de manera aleatoria y guardarlas al final el el ArrayList de ItemCarta*/
     public void organizaAzarCartas(int parejas){
+        Toast.makeText(this, "si", Toast.LENGTH_SHORT).show();
         int[] numeros=new int[dificultad];
         for (int i=0; i<numeros.length; i++)numeros[i]=-1;
 
@@ -163,6 +169,7 @@ public class Partida extends AppCompatActivity {
                     cartas.get(position).setFondoTapar(DESTAPAR);
                     view2.startAnimation(animDestapar);
                     clickCarta=true;
+                    compruebaCartas();
                 }
                 adapterCartas.notifyDataSetChanged();
             }
@@ -240,10 +247,10 @@ public class Partida extends AppCompatActivity {
             viewJugador2.setBackgroundColor(getResources().getColor(R.color.gris,null));
             viewPuntaje2.setBackgroundColor(getResources().getColor(R.color.gris,null));
         }else{
-            viewPuntaje2.setBackgroundColor(getResources().getColor(R.color.negro_claro,null));
+            viewJugador2.setBackgroundColor(getResources().getColor(R.color.negro_claro,null));
             viewPuntaje2.setBackgroundColor(getResources().getColor(R.color.negro_claro,null));
 
-            viewJugador1.setBackgroundColor(getResources().getColor(R.color.gris,null));
+            viewPuntaje1.setBackgroundColor(getResources().getColor(R.color.gris,null));
             viewJugador1.setBackgroundColor(getResources().getColor(R.color.gris,null));
 
         }
@@ -253,9 +260,22 @@ public class Partida extends AppCompatActivity {
         for (int i=0; i<cartas.size(); i++)if (cartas.get(i).getFondoTapar()==TAPAR) return true;
         return false;
     }
+
+
     /*Metodo para finalizar la partida cuando ya se haya verificado que no haya ninguna carta*/
     public void finPartida(){
-        finish();
+
+        try{
+            timerPartida.cancel();
+        }catch (Exception e){}
+        try {
+            timerCarta.cancel();
+        }catch (Exception e){}
+
+        if (!temporizadorActivado)tiempoPartida=(int)(viewChronometer.getBase()-SystemClock.elapsedRealtime())/1000;
+
+        abreDialogFinal();
+        guardaDatos();
     }
 
     /*Metodo que se llamara cuando en los ajustes del inicio de activa el temporizador*/
@@ -276,11 +296,36 @@ public class Partida extends AppCompatActivity {
         }.start();
     }
 
-    public void onPause(){
-        super.onPause();
 
-        nomJ1="aaa";
-        nomJ2="bbb";
+    /*Metodo para abrir el dialog final que mustra el resultado del juego*/
+    public void abreDialogFinal(){
+
+    }
+
+    /*Metodo para guardar el puntaje y el nombre de cada jugador en la base de datos*/
+    public void guardaDatos(){
+        if (!temporizadorActivado){
+            DataBase db=new DataBase(this);
+            db.save(nomJ1,puntaje1);
+            db.save(nomJ2,puntaje2);
+        }
+    }
+
+    public void onResume(){
+        super.onResume();
+        SharedPreferences datos= PreferenceManager.getDefaultSharedPreferences(this);
+
+        nomJ1=datos.getString(Home.PLAYER1,"jugador1");
+        nomJ2=datos.getString(Home.PLAYER2,"jugador2");
+
+        temporizadorActivado=datos.getBoolean(Home.MODO,false);
+
+        if (temporizadorActivado){
+            tiempoPartida(datos.getLong(Home.TIEMPO,10000));
+            viewChronometer.getLayoutParams().height=0;
+        }
+        else viewChronometer.start();
+
         cargarCartas();
     }
 

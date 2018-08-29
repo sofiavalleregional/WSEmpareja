@@ -10,12 +10,17 @@
 
 
     <dimen name="ancho_item_ganador">200dp</dimen>
-    <dimen name="alto_item_ganador">50dp</dimen>
+    <dimen name="alto_item_ganador">47dp</dimen>
+    <dimen name="alto_total_item_ganador">50dp</dimen>
 
     <dimen name="ancho_item_perdedor">130dp</dimen>
-    <dimen name="alto_item_perdedor">40dp</dimen>
+    <dimen name="alto_item_perdedor">37dp</dimen>
+    <dimen name="alto_total_item_perdedor">40dp</dimen>
 
     <dimen name="ancho_item_empate">100dp</dimen>
-    <dimen name="alto_item_empate">45</dimen>
+    <dimen name="alto_item_empate">43dp</dimen>
+    <dimen name="alto_total_item_empate">45dp</dimen>
+
+   <dimen name="radio_item_puntaje_final">50dp</dimen>
 
 </resources>

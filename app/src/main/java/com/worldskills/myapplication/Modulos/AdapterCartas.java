@@ -71,6 +71,8 @@ public class AdapterCartas extends BaseAdapter {
         }
         ItemCarta carta=cartas.get(position);
 
+
+        holder.figura.setBackgroundResource(R.drawable.fondo_tapar_carta);
         holder.figura.setImageResource(FIGURAS[carta.getNumero()]);
         holder.fondoTapar.setBackgroundResource(carta.getFondoTapar());
 

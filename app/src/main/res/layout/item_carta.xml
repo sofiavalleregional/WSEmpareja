@@ -5,6 +5,7 @@
     android:layout_height="@dimen/alto_total_item_carta">
 
     <ImageView
+        android:padding="3dp"
         android:id="@+id/item_carta_figura"
         android:layout_width="@dimen/ancho_item_carta"
         android:layout_height="@dimen/alto_total_item_carta"
