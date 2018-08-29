@@ -13,15 +13,17 @@
         android:theme="@style/AppTheme">
 
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_key"/>
-        <activity android:name=".Splash">
+        <activity android:name=".Splash"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Home" />
-        <activity android:name=".Partida"></activity>
+        <activity android:name=".Home"   android:screenOrientation="portrait"/>
+        <activity android:name=".Partida"   android:screenOrientation="portrait"></activity>
 
         <provider android:authorities="com.facebook.app.FacebookContentProvider292438221354238"
             android:name="com.facebook.FacebookContentProvider"

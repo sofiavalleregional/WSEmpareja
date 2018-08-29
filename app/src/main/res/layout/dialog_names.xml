@@ -2,6 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:id="@+id/layout_dialog_names"
     android:gravity="center_horizontal"
     android:layout_width="300dp"
     android:layout_gravity="center"
