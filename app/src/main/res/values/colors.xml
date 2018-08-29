@@ -12,4 +12,9 @@
     <color name="negro">#000000</color>
 
     <color name="amarilloclaro">#ffb83d</color>
+
+    <color name="azul_f_claro">#4979fc</color>
+    <color name="azul_f_oscuro">#1a47fd</color>
+    <color name="azul_t_claro">#ffb83d</color>
+    <color name="azul_t_oscuro">#ffb83d</color>
 </resources>

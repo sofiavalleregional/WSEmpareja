@@ -278,7 +278,10 @@ public class Partida extends AppCompatActivity {
             timerCarta.cancel();
         }catch (Exception e){}
 
-        if (!temporizadorActivado)tiempoPartida=(int)(viewChronometer.getBase()-SystemClock.elapsedRealtime())/1000;
+        if (!temporizadorActivado){
+            tiempoPartida=(int)(viewChronometer.getBase()-SystemClock.elapsedRealtime())/-1000;
+            viewChronometer.stop();
+        }
 
         abreDialogFinal();
         guardaDatos();
@@ -349,6 +352,8 @@ public class Partida extends AppCompatActivity {
         empateIcon=dialogFin.findViewById(R.id.final_item_empate);
         empateText=dialogFin.findViewById(R.id.final_text_empate);
 
+
+
         if (puntaje1>puntaje2){
             ganador.setText(nomJ1);
             perdedor.setText(nomJ2);
@@ -372,14 +377,16 @@ public class Partida extends AppCompatActivity {
             punt2.setBackgroundResource(R.drawable.item_empate);
 
         }
+
         tiempoT.setText(tiempoPartida+"");
 
 
         LinearLayout layout=dialogFin.findViewById(R.id.layout_dialog_final);
         Animation aparecer=AnimationUtils.loadAnimation(this,R.anim.aparecer);
         layout.startAnimation(aparecer);
-        dialogFin.show();
 
+
+        dialogFin.show();
         dialogFin.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override
             public void onCancel(DialogInterface dialog) {
@@ -409,6 +416,11 @@ public class Partida extends AppCompatActivity {
                 startActivity(intent);
                 break;
         }
+    }
+
+    public void onBackPressed(){
+        Intent intent=new Intent(this, Home.class);
+        startActivity(intent);
     }
 
 
