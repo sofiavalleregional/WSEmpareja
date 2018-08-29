@@ -5,4 +5,9 @@
     <color name="colorAccent">#ccb7f3</color>
 
     <color name="amarillo">#ffaf25</color>
+
+    <color name="negro_claro">#1d1d1d</color>
+    <color name="gris">#9e9e9e</color>
+
+    <color name="negro">#000000</color>
 </resources>
