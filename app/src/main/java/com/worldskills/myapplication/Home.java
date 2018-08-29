@@ -18,6 +18,9 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
     }
 
+
+
+
     public void partida(View view) {
         Intent intent= new Intent(Home.this, Partida.class);
         startActivity(intent);

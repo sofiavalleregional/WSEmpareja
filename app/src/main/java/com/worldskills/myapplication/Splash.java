@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class Splash extends AppCompatActivity {
@@ -13,8 +15,12 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-
+/////////////// Se buscan los componentes en xml para animar, se instancia la animación y se ordena que deje la figura en la posic
         ImageView imageView= findViewById(R.id.image);
+        Animation animation= AnimationUtils.loadAnimation(this, R.anim.alpha);
+        imageView.setAnimation(animation);
+
+        animation.setFillAfter(true);
 
         new Handler().postDelayed(new Runnable() {
             @Override
