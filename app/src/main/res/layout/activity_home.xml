@@ -64,6 +64,7 @@
         android:layout_height="190dp">
 
         <Button
+            android:onClick="partida"
             android:text="Jugar"
             android:textSize="30dp"
             android:textColor="@android:color/white"
