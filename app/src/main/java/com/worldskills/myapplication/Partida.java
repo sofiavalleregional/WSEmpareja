@@ -384,8 +384,7 @@ public class Partida extends AppCompatActivity {
 
 
         LinearLayout layout=dialogFin.findViewById(R.id.layout_dialog_final);
-        Animation aparecer=AnimationUtils.loadAnimation(this,R.anim.aparecer);
-        layout.startAnimation(aparecer);
+        layout.startAnimation(animAparecer);
 
 
         dialogFin.show();
@@ -413,6 +412,7 @@ public class Partida extends AppCompatActivity {
                 finish();
                 break;
             case R.id.final_bton_share:
+                abreDialogCompartir();
                 break;
             case R.id.final_bton_replay:
                  intent=new Intent(getApplicationContext(),Partida.class);
@@ -424,6 +424,34 @@ public class Partida extends AppCompatActivity {
     }
 
     public void abreDialogCompartir(){
+        Dialog dialogCompartir=new Dialog(this,android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+        dialogCompartir.setContentView(R.layout.dialog_compartir);
+        dialogCompartir.setCanceledOnTouchOutside(false);
+        dialogCompartir.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        TextView facebook, twitter;
+
+        facebook=dialogCompartir.findViewById(R.id.share_bton_facebook);
+        twitter=dialogCompartir.findViewById(R.id.share_bton_twitter);
+
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        LinearLayout layout=dialogCompartir.findViewById(R.id.layout_dialog_compartir);
+        layout.startAnimation(animAparecer);
+
+        dialogCompartir.show();
+
 
     }
 
