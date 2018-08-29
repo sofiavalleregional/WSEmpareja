@@ -5,6 +5,7 @@
     android:background="@color/negro"
     android:layout_height="wrap_content"
     android:gravity="center"
+    android:id="@+id/layout_dialog_final"
     android:layout_gravity="center">
 
     <ImageView
@@ -21,6 +22,7 @@
         android:orientation="vertical"
         >
         <TextView
+            android:id="@+id/final_ganador"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Jugador1"
@@ -30,27 +32,10 @@
             android:fontFamily="@font/cambriaz"
             android:textSize="23sp"/>
         <TextView
-            android:drawableStart="@drawable/icono_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textColor="@android:color/white"
-            android:gravity="center"
-            android:paddingLeft="11dp"
-            android:paddingRight="27dp"
-            android:background="@drawable/item_ganador"
-            android:layout_marginBottom="2dp"
+            android:id="@+id/final_puntaje_ganador"
+            style="@style/item_ganador"
             />
-        <TextView
-            android:drawableStart="@drawable/icono_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textColor="@android:color/white"
-            android:gravity="center"
-            android:paddingLeft="11dp"
-            android:paddingRight="27dp"
-            android:background="@drawable/item_ganador"/>
+
 
     </LinearLayout>
 
@@ -58,6 +43,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/fondo_compara_puntajes"
+
+
         android:text="VS"
         android:layout_margin="7dp"
         android:gravity="center"
@@ -74,6 +61,7 @@
 
         >
         <TextView
+            android:id="@+id/final_perdedor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Jugador2"
@@ -85,30 +73,33 @@
 
 
         <TextView
-            android:drawableStart="@drawable/icono_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:paddingLeft="6dp"
-            android:paddingRight="20dp"
-            android:textColor="@android:color/white"
-            android:gravity="center"
-            android:background="@drawable/item_perdedor"
-            android:layout_marginBottom="2dp"
+            android:id="@+id/final_puntaje_perdedor"
+            style="@style/item_perdedor"
             />
-        <TextView
-            android:drawableStart="@drawable/icono_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:paddingLeft="6dp"
-            android:paddingRight="20dp"
-            android:textColor="@android:color/white"
-            android:gravity="center"
-            android:background="@drawable/item_perdedor"/>
+
 
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/final_tiempo"
+        android:layout_marginTop="30dp"
+        style="@style/item_empate"
+        android:drawableStart="@drawable/icono_time"
+        />
+
+    <TextView
+        android:id="@+id/final_item_empate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/final_text_empate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"/>
 
 
     <LinearLayout
@@ -116,26 +107,40 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="25dp"
-
+        android:layout_margin="10dp"
         android:orientation="horizontal"
         android:weightSum="12"
         >
 
-        <Button
+        <ImageButton
+            android:onClick="botonesDialogFinal"
+            android:id="@+id/final_bton_home"
             android:layout_weight="4.5"
             android:layout_height="40dp"
             android:layout_width="0dp"
+            android:background="@drawable/anim_bton_transparente"
+            android:src="@drawable/icono_home"
+
+
             />
         <ImageButton
+            android:id="@+id/final_bton_share"
+            android:onClick="botonesDialogFinal"
             android:layout_weight="2"
             android:layout_height="40dp"
             android:layout_width="0dp"
+            android:background="@drawable/anim_bton_transparente"
+            android:src="@drawable/icono_share"
             />
 
-        <Button
+        <ImageButton
+            android:id="@+id/final_bton_replay"
+            android:onClick="botonesDialogFinal"
             android:layout_weight="4.5"
             android:layout_height="40dp"
             android:layout_width="0dp"
+            android:background="@drawable/anim_bton_transparente"
+            android:src="@drawable/icon_replay"
             />
     </LinearLayout>
 

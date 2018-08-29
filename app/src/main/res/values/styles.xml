@@ -8,4 +8,61 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+
+    <style name="item_ganador">
+        <item name="android:drawableStart">@drawable/icono_start</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">0</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">11dp</item>
+        <item name="android:paddingRight">27dp</item>
+        <item name="android:background">@drawable/item_ganador</item>
+        <item name="android:layout_marginBottom">2dp</item>
+
+
+
+    </style>
+
+    <!--
+   <TextView
+          android:drawableStart="@drawable/icono_time"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="0"
+          android:paddingLeft="6dp"
+          android:paddingRight="20dp"
+          android:textColor="@android:color/white"
+          android:gravity="center"
+          android:background="@drawable/item_perdedor"/>
+   -->
+
+    <style name="item_perdedor">
+        <item name="android:drawableStart">@drawable/icono_start</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">0</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:background">@drawable/item_perdedor</item>
+        <item name="android:layout_marginBottom">2dp</item>
+    </style>
+
+    <style name="item_empate">
+        <item name="android:drawableStart">@drawable/icono_start</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">0</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:background">@drawable/item_empate</item>
+        <item name="android:layout_marginBottom">2dp</item>
+    </style>
+
 </resources>

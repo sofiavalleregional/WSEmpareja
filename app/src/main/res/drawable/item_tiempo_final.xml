@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:width="@dimen/ancho_item_ganador"
+        android:height="@dimen/alto_total_item_ganador"
+        >
+        <shape>
+            <solid android:color="@color/colorPrimaryDark"/>
+            <corners android:radius="@dimen/radio_item_puntaje_final"/>
+        </shape>
+
+
+    </item>
+
+    <item
+        android:width="@dimen/ancho_item_ganador"
+        android:height="@dimen/alto_item_ganador"
+        >
+        <shape>
+            <solid android:color="@color/colorPrimary"/>
+            <corners android:radius="@dimen/radio_item_puntaje_final"/>
+        </shape>
+
+
+    </item>
+
+    <item
+        android:width="@dimen/alto_item_ganador"
+        android:height="@dimen/alto_item_ganador"
+        >
+        <shape>
+            <solid android:color="@color/negro_claro"/>
+            <corners android:radius="@dimen/radio_item_puntaje_final"/>
+            <stroke android:color="@android:color/white" android:width="0.5dp"/>
+        </shape>
+
+
+    </item>
+
+
+
+</layer-list>
