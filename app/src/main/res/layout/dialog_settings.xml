@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center"
+    android:layout_width="250dp"
+    android:gravity="center_horizontal"
+    android:background="@color/negro_claro"
+    android:orientation="vertical"
+    android:layout_height="300dp">
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimaryDark"
+        android:fontFamily="@font/cambriab"
+        android:text="Configurar partida" />
+
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:src="@drawable/icono_time" />
+
+
+    <EditText
+        android:id="@+id/text_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@android:color/white"
+        android:fontFamily="@font/cambriai"
+        android:text="30000"
+        android:textColor="@android:color/white" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/ractivado"
+            android:textColor="@android:color/white"
+            android:text="Activado"
+            android:buttonTint="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/rdesactivado"
+            android:buttonTint="@color/colorPrimaryDark"
+            android:textColor="@android:color/white"
+            android:text="Desactivado"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/confirmar_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/cambriab"
+        android:text="Confirmar" />
+
+</LinearLayout>
