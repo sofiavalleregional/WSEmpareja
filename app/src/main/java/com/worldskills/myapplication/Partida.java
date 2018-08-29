@@ -449,6 +449,8 @@ public class Partida extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity( red.shareTwitter(puntaje1, puntaje2, nomJ1, nomJ2));
 
+
+
             }
         });
 
