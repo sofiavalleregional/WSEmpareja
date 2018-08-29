@@ -232,6 +232,21 @@ public class Partida extends AppCompatActivity {
         viewJugador2.setText(nomJ2);
         viewPuntaje1.setText(puntaje1+"");
         viewPuntaje2.setText(puntaje2+"");
+
+        if (turno){
+            viewJugador1.setBackgroundColor(getResources().getColor(R.color.negro_claro,null));
+            viewPuntaje1.setBackgroundColor(getResources().getColor(R.color.negro_claro,null));
+
+            viewJugador2.setBackgroundColor(getResources().getColor(R.color.gris,null));
+            viewPuntaje2.setBackgroundColor(getResources().getColor(R.color.gris,null));
+        }else{
+            viewPuntaje2.setBackgroundColor(getResources().getColor(R.color.negro_claro,null));
+            viewPuntaje2.setBackgroundColor(getResources().getColor(R.color.negro_claro,null));
+
+            viewJugador1.setBackgroundColor(getResources().getColor(R.color.gris,null));
+            viewJugador1.setBackgroundColor(getResources().getColor(R.color.gris,null));
+
+        }
     }
     /*Metodo con el fin de veficicar si todas las cartas ya han desaparecido de la pantalla*/
     public boolean compruebaFinalPartida(){
@@ -241,6 +256,32 @@ public class Partida extends AppCompatActivity {
     /*Metodo para finalizar la partida cuando ya se haya verificado que no haya ninguna carta*/
     public void finPartida(){
         finish();
+    }
+
+    /*Metodo que se llamara cuando en los ajustes del inicio de activa el temporizador*/
+    public void tiempoPartida(long tiempoP){
+        timerPartida=new CountDownTimer(tiempoP,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                int time=(int)(millisUntilFinished/1000);
+
+                if (time<9)viewTemporizador.setText("0"+time);
+                else viewTemporizador.setText(""+time);
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        }.start();
+    }
+
+    public void onPause(){
+        super.onPause();
+
+        nomJ1="aaa";
+        nomJ2="bbb";
+        cargarCartas();
     }
 
 
