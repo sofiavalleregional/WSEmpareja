@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:width="@dimen/ancho_item_carta"
+        android:height="@dimen/alto_total_item_carta"
+        >
+
+        <shape>
+
+            <solid android:color="@color/colorPrimaryDark"/>
+            <corners android:radius="@dimen/radio_item_carta"/>
+
+
+        </shape>
+    </item>
+
+
+    <item
+        android:width="@dimen/ancho_item_carta"
+        android:height="@dimen/alto_item_carta"
+        >
+
+        <shape>
+            <solid android:color="@color/colorPrimary"/>
+            <corners android:radius="@dimen/radio_item_carta"/>
+
+
+        </shape>
+    </item>
+
+
+    <item
+        android:width="@dimen/ancho_figura_carta"
+        android:height="@dimen/alto_figura_carta"
+        android:gravity="center_horizontal"
+        android:top="4dp"
+        >
+
+        <shape>
+            <solid android:color="@color/colorPrimaryDark"/>
+            <corners android:radius="@dimen/radio_item_carta"/>
+
+
+        </shape>
+    </item>
+
+    <item
+        android:width="@dimen/ancho_figura_carta"
+        android:height="@dimen/alto_figura_carta"
+        android:gravity="center_horizontal"
+        android:top="77dp"
+        >
+
+        <shape>
+            <solid android:color="@color/colorPrimaryDark"/>
+            <corners android:radius="@dimen/radio_item_carta"/>
+
+
+        </shape>
+    </item>
+
+    <item
+        android:width="@dimen/tam_circulo_carta"
+        android:height="@dimen/tam_circulo_carta"
+        android:gravity="center"
+        android:top="-4dp"
+        >
+
+        <shape android:shape="oval">
+            <solid android:color="@color/colorPrimaryDark"/>
+
+
+
+        </shape>
+    </item>
+
+</layer-list>
